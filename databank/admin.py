@@ -8,7 +8,7 @@ admin.site.register(MaritalStatus)
 #admin.site.register(HIVType)
 #admin.site.register(TuberculosisType)
 """
-from hdb.databank.models import Patient, MaritalStatus
+from hdb.databank.models import Patient, Record, MaritalStatus,Job,Schooling, HIVType, TuberculosisType, City, Country, Treatment, Diagnosis
 from django.contrib import admin
 
 class PatientAdmin(admin.ModelAdmin):
@@ -18,5 +18,13 @@ class PatientAdmin(admin.ModelAdmin):
     #date_hierarchy = 'hire_date'
 
 admin.site.register(Patient, PatientAdmin)
-
+admin.site.register(Record)
 admin.site.register(MaritalStatus)
+admin.site.register(Job)
+admin.site.register(Schooling)
+admin.site.register(HIVType)
+admin.site.register(TuberculosisType)
+admin.site.register(City)
+admin.site.register(Country)
+admin.site.register(Treatment)
+admin.site.register(Diagnosis)
