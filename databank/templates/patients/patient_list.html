@@ -1,6 +1,6 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="/site_media/css/databank.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/databank.css">
 </head>
 <body>
 <div id="content">
@@ -18,7 +18,8 @@
     </tr>
   {% for patient in object_list %}
     <tr>
-      <td>{{ patient.first_name }}</td>
+      <td><a href="/patients/update/{{ patient.patient_id }}/">{{ patient.first_name }}</a></td>
+      <!--<td>{{ patient.first_name }}</td>-->
       <td>{{ patient.last_name }}</td>
       <td>{{ patient.phone_number }}</td>
       <!--<td>{{ patient.entry_date }}</td>-->
