@@ -1,24 +1,24 @@
-<html>
+<    >
 <head>
-  <link rel="stylesheet" type="text/css" href="/site_media/css/databank.css">
+    <link rel="stylesheet" type="text/css" href="/Proyecto_Topicos/databank/static/css/databank.css">
 </head>
 
 <body>
-  {% if error_message %}
-    <p><strong>{{ error_message }}</strong></p>
-  {% endif %}
-  <div id="formdiv">
-  <form action="" method="post">{% csrf_token %}
-    {% if object %}
-    <h1>Edit Patient {{ object.first_name }} {{ object.last_name }}</h1>
-    {% else %}
-    <h1>Create Patient</h1>
-    {% endif %}
-    <p>Use this form to manage your patients.</p>
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+<div id="formdiv">
     <form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
-  </form>
-  </div>
+        {% if object %}
+        <h1>Edit Patient {{ object.first_name }} {{ object.last_name }}</h1>
+        {% else %}
+        <h1>Create Patient</h1>
+        {% endif %}
+        <p>Use this form to manage your patients.</p>
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+</div>
 </body>
 </html>

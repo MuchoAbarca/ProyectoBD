@@ -1,48 +1,44 @@
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="/static/css/databank.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/databank.css">
 </head>
 <body>
 <div id="content">
-<a href="/patients/create" class="addlink">Add New Patient</a>
-{% if object_list %}
-  <table id="patient_list_table" frame="hsides" rules="cols" style="border-width: 5px">
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Phone #</th>
-      <!--<th>Entry Date</th>-->
-      <th>Age</th>
-      <th>Gender %</th>
-      <th>Action</th>
-    </tr>
-  {% for patient in object_list %}
-    <tr>
-      <td><a href="/patients/update/{{ patient.patient_id }}/">{{ patient.first_name }}</a></td>
-      <!--<td>{{ patient.first_name }}</td>-->
-      <td>{{ patient.last_name }}</td>
-      <td>{{ patient.phone_number }}</td>
-      <!--<td>{{ patient.entry_date }}</td>-->
-      <td>{{ patient.age }}</td>
-      <td>{{ patient.gender }}</td>
-      <td><a href="/patients/delete/{{ patient.patient_id }}/">Delete</a></td>
-    </tr>
-  {% endfor %}
-  </table>
-{% else %}
-  <p>No patients found.</p>
-{% endif %}
-<div style="margin-top:10px;"/>
-{% if page_range %}
-<ul class="page_list">
-{% for page in page_range %}
-<li><a href="/patients/?page={{page}}">{{page}}</a></li>
-{% endfor %}
-</ul>
-{% else %}
-<p>No more pages.</p>
-{% endif %}
-</div>
+    <a href="/patients/create" class="addlink"> Agregar Nuevo Paciente</a>
+    {% if object_list %}
+    <table id="patient_list_table" frame="hsides" rules="cols" style="border-width: 5px">
+        <tr>
+            <th>Nombre(s)</th>
+            <th>Apellido</th>
+            <th>Tel&eacute;fono</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th/>
+        </tr>
+        {% for patient in object_list %}
+        <tr>
+            <td><a href="/patients/update/{{ patient.patient_id }}/">{{ patient.first_name }}</a></td>
+            <td>{{ patient.last_name }}</td>
+            <td>{{ patient.phone_number }}</td>
+            <td>{{ patient.age }}</td>
+            <td>{{ patient.gender }}</td>
+            <td><a href="/patients/delete/{{ patient.patient_id }}/">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No patients found.</p>
+    {% endif %}
+    <div style="margin-top:10px;"></div>
+    {% if page_range %}
+    <ul class="page_list">
+        {% for page in page_range %}
+        <li><a href="/patients/?page={{page}}">{{page}}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No more pages.</p>
+    {% endif %}
 </div>
 </body>
 </html>
