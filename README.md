@@ -1,5 +1,4 @@
-# Proyecto_Topicos
-Repositorio para el proyecto final de la clase de Tópicos Selectos
+# Proyecto Hospital Data Bank
+Repositorio para el proyecto final de la clase de Tópicos Selectos y Sistemas Biomedicos
 
-Front End — Ricardo Abarca  
-Back End — Brianna Fernandez, Paulina De la Garza
+
